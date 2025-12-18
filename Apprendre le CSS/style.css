@@ -1,0 +1,108 @@
+/* 1rem = 16px */
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@font-face {
+    font-family: "font-1";
+    src: url("./assets/Quicksand-Medium.ttf");
+}
+body{
+    background:url("./assets/sunset-2017933_1280.jpg") no-repeat fixed center/cover;
+    
+}
+/* 
+*{
+    padding: 0;
+    margin: 0;
+} */
+
+h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    color: rgb(0, 0, 139);
+    text-shadow: 5px 3px 0 darkcyan;
+    text-align: center;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p{
+    font-family: "font-1",serif;
+}
+main{
+    background: whitesmoke;
+    width: 85%;
+    min-height: 500px;
+    margin: 10px auto; /*autour de la boite oft */
+    padding: 10px 40px;
+    /* le padding c'est oft à l'intérieur de la boite, une marge intérieure */
+    border-radius: 10px;
+    box-shadow: 0 0 0 blue;
+}
+.positioning,
+.flexbox,
+.grid{
+    border: 2px solid skyblue;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.positioning{
+    position: relative;
+}
+h2{
+    margin: 0px;
+}
+#circle{
+    height: 60px;
+    width: 60px;
+    background: skyblue;
+    padding: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: 110px;
+    box-shadow: 0 2px 12px 5px rgb(51, 51, 51, 0.13);
+    z-index: 1;
+}
+#rectangle{
+    height: 15px;
+    width: 100px;
+    background: slateblue;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+}
+li{
+    list-style: none;
+    font-size: 0.7rem;
+    height: 160px;
+    width: 160px;
+    background: turquoise;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 20px;
+}
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "i1 i2"
+        "ta ta"
+        "bt bt";
+}

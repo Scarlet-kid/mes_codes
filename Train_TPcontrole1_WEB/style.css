@@ -1,0 +1,87 @@
+body{
+    background: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+
+body header nav a{
+    color: white;
+    text-decoration: none;
+}
+nav{
+    background: blue;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
+    margin: 0px;
+    
+}
+body header nav img{
+    height: 60px;
+    width: 60px;
+    border-radius: 5Opx;
+}
+.block{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 900px;
+    background: white;
+    margin: 40px auto;
+    border-radius: 10px;
+    /* padding: 20px; */
+    height: 800px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.apropos{
+    width: 90%;
+    height: 200px;
+    margin: 25px auto;
+    background: #cce0ff;
+    border-radius: 10px ;
+    padding: 20px;
+}
+.competence{
+    width: 90%;
+    height: 50px;
+    background: #cce0ff;
+    margin: 25px auto;
+    border-radius: 10px ;
+    padding: 20px;
+}
+.projet{
+    width: 90%;
+    height: 50px;
+    background: #cce0ff;
+    margin: 25px auto;
+    border-radius: 10px ;
+    padding: 20px;
+}
+body .block h2{
+    margin: 20px;
+}
+footer{
+    background: blue;
+    height: 80px;
+    gap: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
+    margin: 0px;
+    text-align: center;
+    color: white;
+}
+table{
+    width: 95%;
+    height: 50px;
+    margin: 25px auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+th{
+    background: blue;
+    color: white;
+}
