@@ -110,6 +110,16 @@ def visualiser(fichier):
     for num,etu in enumerate(data,start=1):
         print(f"{num} : {etu.strip()}")
 
+# Oubien:
+
+def visualiser2(fichier):
+    if not os.path.exists(fichier):
+        return f'Le fichier {fichier} n\'existe pas'
+    
+    with open(fichier,'r+') as file:
+        for ligne in file:
+            print(ligne.strip())
+
 
 
 if __name__=='__main__':
