@@ -31,6 +31,9 @@ class Arbre_binaire:
         
         if self.droit != None:
             self.droit.infixe()
+
+    def recherche(val):
+        pass
         
 if __name__=='__main__':
     a = Arbre_binaire()
