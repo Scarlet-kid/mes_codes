@@ -9,3 +9,5 @@ def triInsertion(lst:list)->None:
             lst[j] = lst[j-1]
             j = j - 1
         lst[j] = tmp
+
+#teste
