@@ -8,10 +8,4 @@ def triInsertion(lst:list)->None:
         while j > 0 and lst[j-1] > tmp:
             lst[j] = lst[j-1]
             j = j - 1
-<<<<<<< HEAD
         lst[j] = tmp
-
-#teste
-=======
-        lst[j] = tmp
->>>>>>> abf335b (reduct algo trie)
