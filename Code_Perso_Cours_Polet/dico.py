@@ -1,7 +1,7 @@
 def moyenne(listeNotes: list) -> float:
     somme: float
     somme = 0
-    for note in listeNotes:  # le for __ in __ peut calculer des somme suffit juste que les élements soient de type int.
+    for note in listeNotes:  # le for __ in __ peut calculer des sommes suffit juste que les élements soient de type int.
         somme = somme + note
     return somme / len(listeNotes)
 
