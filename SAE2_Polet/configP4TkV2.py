@@ -32,7 +32,7 @@ class Application(Tk):
         self.boutonQuitter= Button(self.frame3, text="Quitter", command=self.destroy)
         self.bouttonAppliquer.pack(side="left")
         self.boutonQuitter.pack(side = "right")
-        
+         
         self.frame3.pack(side="bottom")
         
     def choixFichier1(self):
