@@ -1,0 +1,21 @@
+digraph {
+	10
+	5
+	10 -> 5 [label=G]
+	3
+	5 -> 3 [label=G]
+	2
+	3 -> 2 [label=G]
+	7
+	5 -> 7 [label=D]
+	45
+	10 -> 45 [label=D]
+	12
+	45 -> 12 [label=G]
+	53
+	45 -> 53 [label=D]
+	56
+	53 -> 56 [label=D]
+	57
+	56 -> 57 [label=D]
+}
