@@ -145,7 +145,7 @@ afficher_table_multiplication()"""
 print((fibonacci_iteratif(10)))"""
 
 
-"""def recherche_dichotomique(tab,valeur):
+def recherche_dichotomique(tab,valeur):
     debut=0
     fin=len(tab)-1
     while(debut<=fin):
@@ -160,7 +160,7 @@ print((fibonacci_iteratif(10)))"""
 
 liste = [1, 3, 5, 7, 9, 11, 13]
 print(recherche_dichotomique(liste, 7))  # Affiche 3
-"""
+
 #fonction partie entière itérative pour x réel
 
 def pe(x):

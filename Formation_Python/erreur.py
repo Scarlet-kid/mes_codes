@@ -1,4 +1,4 @@
-"""utl  = input("Quel est votre age?:")
+utl  = input("Quel est votre age?:")
 try:
     utl_int = int(utl)
 except:
@@ -8,7 +8,6 @@ else: #Ce qui se passe en cas de réussite
 finally: # Ce qui se passe dans tous les cas,réussite ou pas.
     print("FIN DU PROGRAMME....")
 
-"""
 
 """nombre1 = 150
 nombre2 = input("Choisir le nombre pour diviser:")
