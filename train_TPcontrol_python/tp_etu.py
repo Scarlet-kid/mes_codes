@@ -79,9 +79,6 @@ def major_par_promotion(lst: list[Etudiant]) -> dict:
 
         return majors
 
-
-
-
 if __name__ == "__main__":
     # print(saisie_etu_info())
     # print(list_etudiant())
