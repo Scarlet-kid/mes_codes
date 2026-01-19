@@ -1,0 +1,101 @@
+from math import *
+def composante(p1,p2):
+    maListe = []
+    if len(p1) != len(p2):
+        return maListe
+    
+    for i in range(len(p1)):
+        maListe.append([p2[i] - p1[i]])
+        
+    return maListe
+
+def distance(p1,p2):
+    vec=composante(p1,p2)
+    vec2=[]
+    for i in range(len(p1)):
+        vec2+=vec[i]
+    #print(vec2)
+    s=0
+    for j in range(len(vec2)):
+        s+=vec2[j]**2
+        
+    return sqrt(s)
+    #return sqrt(vec2[
+
+def produit_scalaire(comp1,comp2):
+    if len(comp1)!=len(comp2):
+        return []
+    # Transformer comp1 et comp2 en liste simple
+    l1=[]
+    l2=[]
+    for i in range(len(comp1)):
+        l1+=comp1[i]
+        l2+=comp2[i]
+    # Maintenant on a des listes simples:
+    s=[]
+    for j in range(len(l1)):
+        s.append(l1[j]*l2[j])
+    
+    return sum(s)
+
+def reguliere(M:list[list[int]])->bool:
+    ligne=len(M)
+    colonne=len(M[0])
+    maListe=[]
+    for i in M:
+        for elt in i:
+            maListe.append(elt)
+    
+    return len(maListe) == ligne*colonne
+    
+def multiplication_scalaire(M,alpha):
+    ligne = len(M)
+    colonne = len(M[0])
+    for i in range(ligne):
+        for j in range(colonne):
+            M[i][j] = M[i][j] * alpha
+    
+    return M
+
+def somme_matrice(M,N):
+    if reguliere(M) and reguliere(N):
+        P=[]
+        ligne = len(M)
+        colonne = len(M[0])
+        for i in range(ligne):
+            res = []
+            for j in range(colonne):
+                res.append(M[i][j] + N[i][j])
+            P.append(res)
+        
+        return P
+    else:
+        return []
+
+def produit_matrice(M,N):
+    if reguliere(M) and reguliere(N):
+        M=[]
+        for i in range(len(M)):
+            res=[]
+            for j in range(len(N)):
+                res.append(sum(M[i][j] * N[j][i]))
+            M.append(res)
+        
+        return M
+                
+    else:
+        return []
+
+if __name__=='__main__':
+    #print(composante([1,2],[4,-3]))
+    #print(distance([1,2],[4,-3]))
+    #print(produit_scalaire([[1],[2],[3]],[[4],[5],[6]]))
+    #print(reguliere([[1,2,3],[4,5,6],[7,8,9]]))
+    #print(multiplication_scalaire([[1,2,3],[4,5,6]],5))
+    #print(somme_matrice([[1,2,3],[4,5,6]],[[7,8,9],[10,11,12]]))
+    #print(composante([1,1,0],[3,2,3]))
+    #print(composante([3,2,3],[1,0,5]))
+    #A=composante([1,1,0],[3,2,3])
+    #B=composante([3,2,3],[1,0,5])
+    #print(produit_scalaire(A,B))
+    print(produit_matrice([[1,2],[3,4],[5,6]],[[1,2,3],[4,5,6]]))
