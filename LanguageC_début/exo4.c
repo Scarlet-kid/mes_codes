@@ -14,7 +14,7 @@ float main(){
     }
     else{
       printf("les valeurs positifs: %i\n",i);
-      printf("La valeur moyenne: %f\n",somme/i);
+      printf("La valeur moyenne: %f\n",1.0*somme/i);
       fini = 1;
     }
   }
