@@ -1,4 +1,4 @@
-from Tri_insertion import triInsertion
+#from Tri_insertion import triInsertion
 
 class Etudiant:
     def __init__(self,nom:str,prenom:str,date:int,moyenne:float,promo:int):
@@ -55,7 +55,7 @@ def TrielstEtudiant(lst: list[Etudiant]) -> list[Etudiant]:
         couples = [(etu.moyenne, etu) for etu in lst]
 
         # On réutilise TON triInsertion sur cette liste
-        triInsertion(couples)
+        #triInsertion(couples)
 
         # On récupère la liste d'étudiants triés
         lst_tries = [etu for (_, etu) in couples]
