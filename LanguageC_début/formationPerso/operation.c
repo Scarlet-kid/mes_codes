@@ -4,7 +4,7 @@ int main()
 {
     char op ;
     int n1, n2 ;
-    printf("opération souhaitée (+ ou *) ? ");
+    printf("operation souhaitee (+ ou *) ? ");
     scanf("%c",&op) ;
     printf("Donnez 2 nombres entiers : ");
     scanf("%d %d",&n1,&n2);
