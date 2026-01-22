@@ -9,5 +9,5 @@
       "icon": "terminal-bash"
     }
   },
-  "terminal.integrated.defaultProfile.windows": "MSYS2 UCRT64 (VSCode)"
+  "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
