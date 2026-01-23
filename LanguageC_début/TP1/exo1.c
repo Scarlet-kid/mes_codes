@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 float mean(float* marks, float* weights, int nb)
 {
 	float s=0.0, p=0.0;
