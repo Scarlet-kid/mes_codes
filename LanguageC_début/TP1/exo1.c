@@ -20,9 +20,7 @@ int main(int argc, char** argv, char **env)
 	printf("m = %f\n",m);
 
 	return 0;
-
-#include <stdio.h>
-
+}
 
 float mean(float* marks, float* weights, int nb)
 {
