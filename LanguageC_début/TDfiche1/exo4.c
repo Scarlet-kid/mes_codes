@@ -7,12 +7,13 @@ float main(){
   while(!fini){
     printf("Saisir des valeurs:");
     scanf("%f",&res);
-    if(res>=0){
-      fini = 0;
+    if(res>=0)
+    {
       i++;
       somme = somme + res;
     }
-    else{
+    else
+    {
       printf("les valeurs positifs: %i\n",i);
       printf("La valeur moyenne: %f\n",1.0*somme/i);
       fini = 1;
