@@ -14,3 +14,17 @@ float main(void)
         printf("La valeur absolue du nombre est %f\n",res);
     }
 }
+
+// int main(void){
+//   float val;
+//   printf("Saisir une valeur réelle:");
+//   scanf("%f",&val);
+//   if (val<0){
+//     printf("%f\n",-val);
+//   }
+//   else{
+//       printf("%f\n",val);
+//   }
+//   return 0;
+// }
+
