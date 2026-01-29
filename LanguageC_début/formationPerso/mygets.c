@@ -5,9 +5,9 @@ void myGets(char *s,int tmax)
 {
     int i;
     fgets(s, tmax, stdin);
-    if(s[strlen(s)-1] == '\n')
+    if(s[strlen(s)-1] == '\n') 
     {
-        s[strlen(s)-1] = '\0'; // Quand on trouve un saut de ligne fin.
+        s[strlen(s)-1] = '\0'; // Quand on trouve un saut de ligne fin alors on marque la fin.
     }
 }
 
