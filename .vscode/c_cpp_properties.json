@@ -1,15 +1,13 @@
 {
   "configurations": [
     {
-      "name": "Windows-UCRT64",
-      "compilerPath": "C:/msys64/ucrt64/bin/gcc.exe",
+      "name": "windows-gcc-x64",
+      "compilerPath": "gcc",
       "intelliSenseMode": "windows-gcc-x64",
-      "cStandard": "c17",
-      "cppStandard": "c++17",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
       "includePath": [
-        "${workspaceFolder}/**",
-        "C:/msys64/ucrt64/include",
-        "C:/msys64/ucrt64/include/**"
+        "${workspaceFolder}/**"
       ]
     }
   ],
