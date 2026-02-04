@@ -5,7 +5,7 @@ def long(lst:list[float])->int:
     res = 0
     for _ in(lst):
         res += 1
-    return res
+    return res # C'est carré
 
 def somme(lst:list[float])->float:
     res = 0
@@ -44,12 +44,11 @@ def ecart(lst:list[float])->float:
 
 #------------------------------------------------------
 def tri_bulle(lst:list[float])->list[float]:
-    for i in range(long(lst)):
-        for j in range(len(lst)-1):
-            if lst[j]>lst[j+1]:
-                tmp = lst[j]
-                lst[j] = lst[j+1]
-                lst[j+1] = tmp
+    for j in range(len(lst)-1):
+        if lst[j]>lst[j+1]:
+            tmp = lst[j]
+            lst[j] = lst[j+1]
+            lst[j+1] = tmp
     return lst
 
 def mediane(lst:list[float])->float:
@@ -67,7 +66,7 @@ def quartiles(lst:list[float]):
     q2 = mediane(lst)
     l1 = lst[0:long(lst)//2]
     q1 = mediane(l1)
-    l2 = lst[long(lst)//2+1::]
+    l2 = lst[(long(lst)//2)+1::]
     q3 = mediane(l2)
     return q1 ,q2 ,q3
 
