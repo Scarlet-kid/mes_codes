@@ -40,7 +40,7 @@ def variance(lst:list[float])->float:
     return Masomme/long(lst) - moy_carre
 
 def ecart(lst:list[float])->float:
-    return round(sqrt(variance(lst)),2)
+    return sqrt(variance(lst)) #on round avec 2
 
 #------------------------------------------------------
 def tri_bulle(lst:list[float])->list[float]:
