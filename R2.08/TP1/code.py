@@ -55,10 +55,13 @@ def tri_bulle(lst:list[float])->list[float]:
 def mediane(lst:list[float])->float:
     lst_ordonné = tri_bulle(lst)
     n = long(lst_ordonné)
-    if long(lst)%2 == 0:
-        return ((lst_ordonné[n//2]-1) + (lst_ordonné[n//2])) //2
+    #print(n)
+    if n % 2 == 0:
+        val1 = lst_ordonné[n//2]
+        val2 = lst_ordonné[(n//2)-1]
+        return (val1+val2)/2
     else:
-        return lst_ordonné[(long(lst)//2)]
+        return lst_ordonné[n//2]
     
 def quartiles(lst:list[float]):
     q2 = mediane(lst)
