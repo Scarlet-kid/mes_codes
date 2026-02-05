@@ -75,8 +75,8 @@ def moustache(x):
     q1, med, q3 = quartiles(x)
     maximum = maxi(x)          
     moy = moyenne(x)          
-    plt.figure(figsize=(10, 5))
-    plt.title("diagramme de Tukey")
+    plt.figure(figsize=(10, 5)) #Initialisation de la feuille vierge et de sa taille.
+    plt.title("diagramme de Tukey") #Titre
     plt.plot([q1, q3], [0.2, 0.2], color='blue') 
     plt.plot([q1, q3], [0.4, 0.4], color='blue')
     plt.plot([q1, q1], [0.2, 0.4], color='blue') 
@@ -180,7 +180,7 @@ def prog():
     #print(mediane([5,7,9,6,4,1,8]))
     #print(quartiles([i for i in range(10)]))
     #[0,1,2,3,4,5,6,7,8,9]
-    #print(moustache([i for i in range(100)]))
-    etablir_releve(poids)
+    print(moustache(poids))
+    #etablir_releve(poids)
 if __name__ == "__main__":
     prog()

@@ -81,6 +81,19 @@ TabListInt supprimer(TabListInt TLI, int val)
     return TLI;
 }
 
+TabListInt supprimer2(TabListInt tli, int val)
+{
+  TabListInt myTab;
+  for(int i=0; i<tli.pos; i++)
+  {
+    if(tli.data[i] != val)
+    {
+      myTab.data[i]=tli.data[i];
+    }
+  }
+  return myTab;
+}
+
 void trier(TabListInt tli)
 {
   int tmp;
@@ -109,6 +122,7 @@ int main()
   printTabListInt(maListe);
   //trier(maListe);
   maListe = supprimer(maListe,10);
+  //maListe=supprimer2(maListe,10);
   printTabListInt(maListe);
   printf("\n");
   return 0;
