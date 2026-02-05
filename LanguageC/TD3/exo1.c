@@ -51,13 +51,64 @@ void printTabListInt(TabListInt tli)
   printf("]");
 }
 
+TabListInt supprimer(TabListInt TLI, int val)
+{
+    int index = 0;
+    int trouve = 0;
+    while (trouve == 0 && index <= TLI.pos)
+    {
+        if (TLI.data[index] == val)
+        {
+            trouve = 1;
+        }
+        else
+        {
+            index++;
+        }
+    }
+
+    if (trouve)
+    {
+        int i = index;
+        while (i < TLI.pos)
+        {
+            TLI.data[i] = TLI.data[i + 1];
+            i++;
+        }
+        TLI.pos--;
+    }
+
+    return TLI;
+}
+
+void trier(TabListInt tli)
+{
+  int tmp;
+  int i;
+  int j;
+  for(i=1;i<=tli.pos;i++)
+  {
+  tmp = tli.data[i];
+  j=i;
+  while(j>0 && tli.data[j-1]>tmp)
+  {
+    tli.data[j]=tli.data[j-1];
+    j=j-1;
+  }
+  tli.data[j] = tmp;
+  }
+}
+
 int main()
 {
   TabListInt maListe;
   maListe = creerTabListInt();
-  maListe = append(maListe,5);
-  maListe = append(maListe,10);
   maListe = append(maListe,15);
+  maListe = append(maListe,10);
+  maListe = append(maListe,5);
+  printTabListInt(maListe);
+  //trier(maListe);
+  maListe = supprimer(maListe,10);
   printTabListInt(maListe);
   printf("\n");
   return 0;
