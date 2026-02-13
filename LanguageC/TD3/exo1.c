@@ -13,7 +13,7 @@ TabListInt creerTabListInt() // On la crée vu que on l'a déja come objet notre
   TabListInt tli; //On renomme notre objet TabListInt en tli(souci de flexbiliser la manipulation)
   tli.taille = 10;
 
-  tli.pos = -1; //ya rien dedans par défaut cest -1
+  tli.pos = -1; //ya rien dedans par défaut cest -1 
   tli.data = (int *) malloc(tli.taille*sizeof(int)); //allouer de la mémoire pour un entier. 10 fois la taille d'un objet int 
   return tli;
 }
