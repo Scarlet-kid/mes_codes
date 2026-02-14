@@ -2,7 +2,7 @@ import code
 from matplotlib import pyplot as plt
 
 def nuage(x:list[float],y:list[float]):
-    plt.scatter(x,y)
+    plt.scatter(x,y,label='Point')
 
 # Jai deja la fct moyenne
 
@@ -37,40 +37,12 @@ def nuage_affine(x:list[float],y:list[float]):
     b = coeford(x,y)
     nuage(x,y)
     plt.plot(Nx,Ny,'ro',c='red',label='Point moyen') #ro : plt.plot pour un seul point.
-    plt.scatter(x,y,label='Point')
     minX , maxX = code.mini(x),code.maxi(x)
     plt.plot([minX,maxX],[a*minX+b,a*maxX+b],label='droite de regression')
     plt.text(25,80,f"équa droite :{round(coefdir(x,y),2)}x + {round(coeford(x,y),2)}\ncoord point moyen:{pointMoyen(x,y)}",c="red",ha="center")
     plt.xlabel("nb de clients")
     plt.ylabel("Prix")
     plt.legend()
-    plt.show()
-    
-def nuage_affine2(x:list[float],y:list[float]):
-    # 1. Calculs
-    Nx, Ny = pointMoyen(x,y)
-    a = coefdir(x,y)
-    b = coeford(x,y)
-    
-    # 2. Graphique
-    plt.figure(figsize=(8, 5))
-    plt.scatter(x, y, label="Données réelles") # Un seul scatter suffit
-    plt.plot(Nx, Ny, 'ro', label=f"Point moyen G({round(Nx,1)}, {round(Ny,1)})")
-    
-    # Droite de régression
-    minX, maxX = min(x), max(x)
-    plt.plot([minX, maxX], [a*minX + b, a*maxX + b], color="green", label="Régression")
-    
-    # 3. Texte de l'équation (placé dynamiquement)
-    equation = f"y = {round(a,2)}x + {round(b,2)}"
-    plt.text(minX, max(y), equation, c="red", fontweight="bold")
-    
-    # 4. Labels (Attention à la cohérence !)
-    plt.title("Nombre de Clients en fonction du Prix")
-    plt.xlabel("Prix (€)")
-    plt.ylabel("Nombre de clients")
-    plt.legend()
-    plt.grid(True, linestyle="--", alpha=0.6)
     plt.show()
 
 def prog():
