@@ -27,7 +27,7 @@ def coefdir(x:list[float],y:list[float])->float:
     return covariance(x,y)/code.variance(x)
 
 def coeford(x:list[float],y:list[float]):
-    moyY,moyX = pointMoyen(x,y)
+    moyX,moyY = pointMoyen(x,y)
     return moyY - (coefdir(x,y)*moyX)
 
 def nuage_affine(x:list[float],y:list[float]):
@@ -36,13 +36,14 @@ def nuage_affine(x:list[float],y:list[float]):
     a = coefdir(x,y)
     b = coeford(x,y)
     nuage(x,y)
-    plt.plot(Nx,Ny,'ro',c='red') #ro : plt.plot pour un seul point.
-    plt.scatter(x,y)
+    plt.plot(Nx,Ny,'ro',c='red',label='Point moyen') #ro : plt.plot pour un seul point.
+    plt.scatter(x,y,label='Point')
     minX , maxX = code.mini(x),code.maxi(x)
-    plt.plot([minX,maxX],[a*minX+b,a*maxX+b])
-    plt.text(25,80,f"{round(coefdir(x,y),2)}x + {round(coeford(x,y),2)}\n{pointMoyen(x,y)}",c="red",ha="center")
+    plt.plot([minX,maxX],[a*minX+b,a*maxX+b],label='droite de regression')
+    plt.text(25,80,f"équa droite :{round(coefdir(x,y),2)}x + {round(coeford(x,y),2)}\ncoord point moyen:{pointMoyen(x,y)}",c="red",ha="center")
     plt.xlabel("nb de clients")
     plt.ylabel("Prix")
+    plt.legend()
     plt.show()
     
 def nuage_affine2(x:list[float],y:list[float]):
