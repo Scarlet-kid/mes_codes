@@ -74,7 +74,7 @@ def moustache(lst:list[float]):
     plt.figure()
     plt.title("boite a moustache")
     plt.vlines(q2,0.8,1.2,colors='red') # La mediane
-    plt.vlines(q1,0.8,1.2)
+    plt.vlines(q1,0.8,1.2) # 
     plt.vlines(q3,0.8,1.2)
     plt.hlines(1.2,q1,q3)
     plt.hlines(0.8,q1,q3)
@@ -89,14 +89,15 @@ def moustache(lst:list[float]):
     plt.text(q2,1.3,f"médiane\n({q2})",ha='center',c='red')
     plt.text(q3,0.6,f"q3\n({q3})",ha='center')
     plt.text(moy,0.6,f"moyenne\n({round(moy,2)})",ha='center',c='black')
-    plt.ylim(0,2)
+    plt.ylim(0,2) # Toujours mettre ca 
+    plt.axis('off') #Permet d'effacer l'axe des x et y plutot pratique tout de meme 
     plt.show()
     
 with open("R2.08/TP1/poid.txt",'r') as file:
     myData = []
     for elt in file:
         elt.strip()
-        myData.append(int(elt))
+        myData.append(float(elt)) #float pour plus de sécurité
 
 def etablir_releve(liste_poids):
     t = long(liste_poids)        
@@ -117,6 +118,7 @@ def etablir_releve(liste_poids):
     
 #print(etablir_releve(myData))
 
-print(moustache(myData))
+#print(moustache(myData))
+
     
     
