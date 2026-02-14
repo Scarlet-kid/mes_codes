@@ -20,6 +20,8 @@ def mini(lst:list[float])->float:
             mini = i
     return mini
 
+# On peut optimiser pt en commence le parcours a partir de lst[1::]
+
 def maxi(lst:list[float])->float:
     maxi = lst[0]
     for i in lst:
@@ -37,23 +39,23 @@ def variance(lst:list[float])->float:
         lst2.append(i**2)
     moy_carre = moyenne(lst)**2
     Masomme = somme(lst2)
-    return Masomme/long(lst) - moy_carre
+    return (Masomme/long(lst)) - moy_carre #Plus de sécurité
 
 def ecart(lst:list[float])->float:
-    return sqrt(variance(lst)) #on round avec 2
+    return sqrt(variance(lst)) #on round avec 2 deux chiffres apres la virgule
 
 #------------------------------------------------------
 def tri_bulle(lst:list[float])->float:
     for _ in range(long(lst)):
         for i in range(long(lst)-1):
             if lst[i]>lst[i+1]: # SI ce qu'il y'a avant est plus grand que ce qu'il ya apres
-                tmp = lst[i] # On met dans une variable le plus grand par défaut
+                tmp = lst[i] # On met dans une variable le plus grand par défaut cest a dire ce qu'il ya avant
                 lst[i] = lst[i+1] # On écrase ce qu'il ya avant avec le plus petit
                 lst[i+1] = tmp # Et ce qu'il ya apres prend la plus grande valeur pour que le cycle continue.
     return lst
 
 def mediane(lst:list[float])->float:
-    lst_ordonné = tri_bulle(lst)
+    lst_ordonné = tri_bulle(lst) # Tres important faut tjrs trié avant la mediane.
     n = long(lst_ordonné)
     #print(n)
     if n % 2 == 0:
@@ -71,14 +73,14 @@ def quartiles(lst:list[float]):
     q3 = mediane(l2)
     return q1 ,q2 ,q3
 
-def moustache(x):
+def moustache(x:list[float]):
     minimum = mini(x)         
     q1, med, q3 = quartiles(x)
     maximum = maxi(x)          
     moy = moyenne(x)          
-    plt.figure(figsize=(10, 5)) #Initialisation de la feuille vierge et de sa taille.
+    plt.figure() #Initialisation de la feuille vierge et de sa taille. pas de taille il va s'adapter
     plt.title("diagramme de Tukey") #Titre
-    plt.plot([q1, q3], [0.2, 0.2], color='blue') 
+    plt.plot([q1, q3], [0.2, 0.2], color='blue')  
     plt.plot([q1, q3], [0.4, 0.4], color='blue')
     plt.plot([q1, q1], [0.2, 0.4], color='blue') 
     plt.plot([q3, q3], [0.2, 0.4], color='blue')
@@ -135,7 +137,7 @@ def prog():
     #print(mediane([5,7,9,6,4,1,8]))
     #print(quartiles([i for i in range(10)]))
     #[0,1,2,3,4,5,6,7,8,9]
-    #print(moustache([i for i in range(100)]))
-    etablir_releve(myData)
+    print(moustache([i for i in range(1,101)]))
+    #etablir_releve(myData)
 if __name__ == "__main__":
     prog()
