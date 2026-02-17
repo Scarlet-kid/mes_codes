@@ -118,7 +118,7 @@ def etablir_releve(liste_poids):
     
 #print(etablir_releve(myData))
 
-#print(moustache(myData))
+print(moustache(myData))
 
     
     

@@ -125,6 +125,6 @@ int main()
   //maListe=supprimer2(maListe,10);
   printTabListInt(maListe);
   printf("\n");
-  return 0;
+  //return 0;
 }
 // pratique les alloc dynamique !!!!
