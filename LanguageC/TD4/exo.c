@@ -51,15 +51,16 @@ int my_strcmp(const char *s1, const char *s2)
 
 char* my_strcat(char *str1, int size1, char *str2,int size2)
 {
-  char* str3;
+  char * str3;
   str3 = (char*)(malloc(sizeof(char*)*(size1+size2+1)));
-  for(int i = 0;i<size1;i++)
+  int i=0;
+  for(int j = 0;j<size1;j++,i++)
   {
-    str3[i]=str1[i];
+    str3[i]=str1[j];
   }
-  for(int j=size1;j<=size2;j++)
+  for(int j=0;j<size2;j++,i++)
   {
-    str3[j]=str2[j];
+    str3[i]=str2[j];
   }
   str3[size1+size2+1] = '\0';
   return str3;
