@@ -6,10 +6,16 @@ int concatene(int tab1[],int size1,int tab2[],int size2)
   int *tab3;
   tab3 = malloc((size1+size2)*sizeof(int));
   int i = 0;
-  for(int j=0;j<size1;j++;i++)
+  for(int j=0;j<size1;j++,i++)
   {
     tab3[i] = tab2[j];
   }
+
+  for (int j = 0; j < size2; j++, i++)
+  {
+    tab3[i] = tab2[j];
+  }
+  
   return tab3;
 }
 

@@ -4,17 +4,17 @@
 typedef struct
 {
   int * data; //Le tableau en soi.
-  int taille ; // lla taille du tableau
+  int taille ; // la taille du tableau
   int pos; //La position du dernier élément ajouté.
 } TabListInt; //On définit la structure de notre TabListInt.
 
 TabListInt creerTabListInt() // On la crée vu que on l'a déja come objet notre fonction le renverra.
 {
-  TabListInt tli; //On renomme notre objet TabListInt en tli(souci de flexbiliser la manipulation)
-  tli.taille = 10;
+  TabListInt tli; //On cree un objet tab list int appelé tli.
+  tli.taille = 10; // taille par défaut.
 
-  tli.pos = -1; //ya rien dedans par défaut cest -1 
-  tli.data = (int *) malloc(tli.taille*sizeof(int)); //allouer de la mémoire pour un entier. 10 fois la taille d'un objet int 
+  tli.pos = -1; //ya rien dedans par défaut cest -1 .
+  tli.data = (int*) malloc(tli.taille*sizeof(int)); //allouer de la mémoire pour un entier. 10 fois la taille d'un objet int 
   return tli;
 }
 
@@ -27,7 +27,7 @@ TabListInt append(TabListInt tli, int val) // Pour ajouter.
    {
       nouvTab[i] = tli.data[i];
    }
-   free(tli.data); //libérer l'espace mémoire non utilisé quand on aura fais .
+   free(tli.data); //libérer l'espace mémoire de notre tablistint de base car on a doublé l'espace mémoire da,sune autre tablistint pour y stocker des donnée de celle ci ainsi que ceux qui sont supplémentaire.
    tli.data = nouvTab; // Donc je pense en gros on modifie une liste et on le plaque dans tli.data (pratique)
    tli.taille = tli.taille*2; //On double la taille.
   }
@@ -55,43 +55,30 @@ TabListInt supprimer(TabListInt TLI, int val)
 {
     int index = 0;
     int trouve = 0;
-    while (trouve == 0 && index <= TLI.pos)
+    while (trouve == 0 && index <= TLI.pos) //On a pas trouvé et on est pas arrivé a la fin de la liste,
     {
-        if (TLI.data[index] == val)
+        if (TLI.data[index] == val) // SI on a trouvé a un index
         {
-            trouve = 1;
+            trouve = 1; // on a trouvé on sort de la boucle.
         }
         else
         {
-            index++;
+            index++; // on passe a l'indice suivant.
         }
     }
 
-    if (trouve)
+    if (trouve) // Si on a trouvé
     {
-        int i = index;
+        int i = index; // On recupere la position de la valeur.
         while (i < TLI.pos)
         {
             TLI.data[i] = TLI.data[i + 1];
             i++;
         }
-        TLI.pos--;
+        TLI.pos--; // Polet il est trop fort .
     }
 
     return TLI;
-}
-
-TabListInt supprimer2(TabListInt tli, int val)
-{
-  TabListInt myTab;
-  for(int i=0; i<tli.pos; i++)
-  {
-    if(tli.data[i] != val)
-    {
-      myTab.data[i]=tli.data[i];
-    }
-  }
-  return myTab;
 }
 
 void trier(TabListInt tli)
@@ -119,10 +106,12 @@ int main()
   maListe = append(maListe,15);
   maListe = append(maListe,10);
   maListe = append(maListe,5);
+  maListe = append(maListe,0);
+  maListe = append(maListe,1);
+  maListe = append(maListe,2);
   printTabListInt(maListe);
-  //trier(maListe);
-  maListe = supprimer(maListe,10);
-  //maListe=supprimer2(maListe,10);
+  trier(maListe);
+  //maListe = supprimer(maListe,10);
   printTabListInt(maListe);
   printf("\n");
   //return 0;

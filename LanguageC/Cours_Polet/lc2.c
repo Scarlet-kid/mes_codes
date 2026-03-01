@@ -9,11 +9,11 @@ typedef struct _maillon
 
 typedef struct _lc
 {
-    Maillon *tete;
+    Maillon* tete;
     int nbElt;
 } LCint;
 
-LCint CreerLCint()
+LCint creerLCint()
 {
     LCint liste;
     liste.tete = NULL;
@@ -21,14 +21,13 @@ LCint CreerLCint()
     return liste;
 }
 
-Maillon* creerMaillon(int val)
+Maillon *creerMaillon(int val)
 {
-    Maillon* adrMaillon;
-    adrMaillon = (Maillon*) malloc(sizeof(Maillon));
-    adrMaillon->valeur = val;
-    adrMaillon->suivant = NULL;
-
-    return adrMaillon;
+    Maillon* adrMailllon;
+    adrMailllon = (Maillon*)malloc(sizeof(Maillon));
+    adrMailllon->valeur = val;
+    adrMailllon->suivant = NULL;
+    return adrMailllon;
 }
 
 _Bool estVide(LCint liste)
@@ -36,32 +35,13 @@ _Bool estVide(LCint liste)
     return liste.tete == NULL;
 }
 
-LCint ajouterValeur(LCint liste, int val)
-{
-    if(estVide(liste))
-    {
-        liste.tete = creerMaillon(val);
-    }
-    else
-    {
-        Maillon* ptr=liste.tete;
-        while (ptr->suivant!=NULL)
-        {
-            ptr = ptr->suivant;
-        }
-        ptr->suivant = creerMaillon(val);
-    }
-    liste.nbElt ++;
-    return liste;
-}
-
 void afficher(LCint liste)
 {
     printf("[");
     if(!estVide(liste))
     {
-        Maillon* ptr = liste.tete;
-        while (ptr!=NULL)
+        Maillon * ptr = liste.tete;
+        while(ptr!=NULL)
         {
             printf("%d",ptr->valeur);
             if(ptr->suivant!=NULL)
@@ -74,12 +54,31 @@ void afficher(LCint liste)
     printf("]");
 }
 
-Maillon* rechercher(LCint liste, int val)
+LCint ajouterVal(LCint liste, int val)
+{
+    if(estVide(liste))
+    {
+        liste.tete = creerMaillon(val);
+    }
+    else
+    {
+        Maillon * ptr = liste.tete;
+        while (ptr->suivant!=NULL)
+        {
+            ptr = ptr->suivant;
+        }
+        ptr->suivant = creerMaillon(val);
+    }
+    liste.nbElt ++;
+    return liste;
+}
+
+Maillon * rechercher(LCint liste, int val)
 {
     _Bool trouve = 0;
-    Maillon* ptr = liste.tete;
+    Maillon * ptr = liste.tete;
     _Bool fini = ptr == NULL;
-    while (!trouve)
+    while (!fini)
     {
         if(ptr->valeur == val)
         {
@@ -104,18 +103,18 @@ Maillon* rechercher(LCint liste, int val)
 
 LCint supprimer(LCint liste, int val)
 {
-    Maillon* aDetruire;
-    aDetruire = rechercher(liste,val);
+    Maillon * aDetruire;
+    aDetruire = rechercher(liste, val);
     if(aDetruire != NULL)
     {
-        Maillon* ptr = liste.tete;
+        Maillon * ptr = liste.tete;
         if(aDetruire == ptr)
         {
             liste.tete = liste.tete->suivant;
         }
         else
         {
-            while (ptr->suivant!=aDetruire)
+            while (ptr->suivant != NULL)
             {
                 ptr = ptr->suivant;
             }
@@ -126,3 +125,14 @@ LCint supprimer(LCint liste, int val)
     return liste;
 }
 
+int main()
+{
+    LCint maListe;
+    maListe = creerLCint();
+    maListe = ajouterVal(maListe,5);
+    maListe = ajouterVal(maListe,15);
+    maListe = ajouterVal(maListe,10);
+    afficher(maListe);
+    printf("\n");
+    return 0;
+}
