@@ -41,7 +41,7 @@ char* reduire(char* s)
         return NULL;
     }
     int Slongueur = longueur(s);
-    char *Macopie = malloc(sizeof(int)*Slongueur);
+    char *Macopie = malloc(sizeof(char)*Slongueur);
     if (Macopie==NULL)
     {
         return NULL;
@@ -49,7 +49,7 @@ char* reduire(char* s)
     copie(Macopie, s);
 }
 
-/*int main()
+int main()
 {
     
     char maChaine[] = "lolo";
@@ -59,4 +59,4 @@ char* reduire(char* s)
     
     return 0;
 }
-*/
+
