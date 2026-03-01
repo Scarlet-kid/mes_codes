@@ -123,6 +123,7 @@ LCint supprimer(LCint liste, int val)
                 ptr = ptr->suivant; // pour que ca continue.
             }
             ptr->suivant = ptr->suivant->suivant; // Pour que ca continue le suivant de la tete devient le suivant du suivant de la tete ainsi de suite , je comprend.
+            free(aDetruire);
         }
         liste.nbElt --; //Si on trouve le truc et on le detruit et on désincrement le nb d'elt de 1.
     }
