@@ -59,6 +59,7 @@ def EnregistrerMesure(conn,idSensor,valeur):
     """
     date = datetime.now()
     conn.execute(sql,[idSensor,date,valeur])
+    conn.commit()
     return date
 
 
