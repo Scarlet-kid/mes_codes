@@ -1,11 +1,11 @@
 from matplotlib import pyplot as plt
-from math import sqrt,pi,e
+from math import sqrt, pi, e
 
 def f1(n):
     return -3 * n**2 + 2 * n + 100
 
 def f2(n):
-    return -3*n**2
+    return -3 * n ** 2
 
 def compare(f, g):
     lst = [10, 100, 1000, 10000, 100000, 1000000]
@@ -13,15 +13,6 @@ def compare(f, g):
         print("n = ",elt)
         print("\t","f1(n) = ",f1(elt))
         print("\t","f2(n) = ",f2(elt))
-
-def graphe1():
-    plt.figure()
-    lst = [i for i in range(51)]
-    plt.title("Comparaison des deux suites sur l'imtervalle [0; 50]")
-    plt.plot(lst, [f1(i) for i in range(51)],label="-3x^2 -2x + 100", linestyle="-",color = "red")
-    plt.plot(lst, [f2(i) for i in range(51)], label = "-3x^2",marker = ".", linestyle = "None", color = "blue")
-    plt.legend()
-    plt.show()
 
 def graphe1():
     plt.figure()
