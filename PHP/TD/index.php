@@ -13,6 +13,10 @@
     <br>
     <a href="./rechercher.php">lien pour rechercher des livres</a>
     <br>
-    
+    <a href="./theme.php">lien pour changer le thème</a>
+    <br>
+    <a href="./db.php">accessibilité base de données</a>
+    <br>
+    <a href="./connexion.php">page de connexion</a>
 </body>
 </html>
