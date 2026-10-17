@@ -12,6 +12,10 @@ python -m http.server 8000
 
 Ouvrez ensuite `http://localhost:8000`. Aucun compte, serveur applicatif ou service d’IA n’est utilisé. Les repas et aliments personnalisés sont stockés dans le stockage local du navigateur, sur cet appareil.
 
+## Hébergement
+
+L’application est publiée sur [GitHub Pages](https://scarlet-kid.github.io/mes_codes/). Chaque modification de `calorie-app/` poussée sur `main` déclenche automatiquement une mise à jour du site via GitHub Actions.
+
 ## Utiliser sur un téléphone
 
 Pour l’ouvrir et l’installer sur un téléphone, hébergez le contenu de ce dossier sur un site HTTPS, puis ouvrez son adresse avec le navigateur du téléphone. Choisissez ensuite « Ajouter à l’écran d’accueil » (Safari) ou « Installer l’application » (navigateurs compatibles). HTTPS est nécessaire pour l’installation PWA et le fonctionnement hors ligne ; le serveur local ci-dessus sert au développement sur ordinateur.
