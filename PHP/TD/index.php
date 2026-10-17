@@ -6,7 +6,7 @@
     <title>Médiathèque</title>
 </head>
 <body>
-    <h2>Page d'acccueil</h2>
+    <h1>Page d'acccueil</h1>
     <a href="./ajout.php">lien pour ajouter des livres</a>
     <br>
     <a href="./voir.php">lien pour voir des livres</a>

@@ -1,9 +1,9 @@
 <?php
-$host = 'iutinfo-sgbd.uphf.fr';
+$host = 'localhost';
 $port = '5432'; // Port par défaut de PostgreSQL
 $dbname = 'postgres';
-$user = 'iutinfo573';
-$password = 'idhaGxeW';
+$user = 'postgres';
+$password = '66793270';
 
 try {
     // Connexion PostgreSQL via PDO

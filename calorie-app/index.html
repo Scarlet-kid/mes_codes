@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f0">
+  <meta name="description" content="Composez votre repas et estimez simplement ses calories.">
+  <title>À table — Mon repas</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="À table, accueil">
+      <span class="brand-mark" aria-hidden="true">à</span>
+      <span>à table<span class="brand-dot">.</span></span>
+    </a>
+    <div class="topbar-right">
+      <span class="offline-label"><span class="status-dot"></span> Vos repas, en privé</span>
+      <button class="install-button" id="install-button" type="button" hidden>Installer l’app</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow"><span class="eyebrow-line"></span> LE PETIT CARNET ALIMENTAIRE</p>
+      <h1>Votre repas,<br><span>en toute simplicité.</span></h1>
+      <p class="intro-copy">Ajoutez ce qu’il y a dans votre assiette, ajustez les quantités et découvrez une estimation des calories.</p>
+      <div class="intro-note"><span aria-hidden="true">✳</span> Pas de photo, pas de compte. Vos données restent sur cet appareil.</div>
+    </section>
+
+    <div class="workspace">
+      <section class="panel food-panel" aria-labelledby="food-heading">
+        <div class="section-heading">
+          <div>
+            <p class="step-label">ÉTAPE 1</p>
+            <h2 id="food-heading">Qu’y a-t-il au menu ?</h2>
+          </div>
+          <button class="text-button" id="custom-food-button" type="button">＋ Mon aliment</button>
+        </div>
+
+        <label class="search-box">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+          <span class="visually-hidden">Rechercher un aliment</span>
+          <input id="food-search" type="search" placeholder="Rechercher un aliment…" autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+
+        <div class="category-list" id="category-list" aria-label="Filtrer par catégorie"></div>
+        <div class="food-list" id="food-list" aria-live="polite"></div>
+        <p class="data-note">Valeurs indicatives pour 100 g. Les valeurs réelles varient selon les produits et leur préparation.</p>
+      </section>
+
+      <aside class="panel meal-panel" aria-labelledby="meal-heading">
+        <div class="section-heading meal-heading">
+          <div>
+            <p class="step-label">ÉTAPE 2</p>
+            <h2 id="meal-heading">Mon assiette</h2>
+          </div>
+          <span class="meal-date" id="meal-date"></span>
+        </div>
+
+        <label class="meal-name-label" for="meal-name">Nom du repas</label>
+        <input class="meal-name-input" id="meal-name" type="text" maxlength="48" placeholder="Ex. Déjeuner du lundi">
+
+        <div class="meal-items" id="meal-items" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state">
+          <span class="empty-illustration" aria-hidden="true">＋</span>
+          <strong>Votre assiette est vide</strong>
+          <span>Choisissez un aliment dans la liste pour commencer.</span>
+        </div>
+
+        <div class="meal-footer">
+          <div class="total-row">
+            <div><span class="total-label">TOTAL ESTIMÉ</span><span class="total-caption" id="total-caption">0 aliment</span></div>
+            <div class="total-value"><span id="total-calories">0</span><span>kcal</span></div>
+          </div>
+          <div class="meal-actions">
+            <button class="save-button" id="save-meal-button" type="button" disabled><span aria-hidden="true">↗</span> Enregistrer ce repas</button>
+            <button class="clear-button" id="clear-meal-button" type="button" disabled>Vider</button>
+          </div>
+          <p class="estimate-note">Une estimation pour vous guider, jamais une mesure exacte.</p>
+        </div>
+      </aside>
+    </div>
+
+    <section class="history-section" aria-labelledby="history-heading">
+      <div class="history-heading">
+        <div>
+          <p class="step-label">VOTRE CARNET</p>
+          <h2 id="history-heading">Repas enregistrés</h2>
+        </div>
+        <span id="history-count" class="history-count">0 repas</span>
+      </div>
+      <div id="history-list" class="history-list"></div>
+      <p class="history-empty" id="history-empty">Vos repas enregistrés apparaîtront ici, sur cet appareil.</p>
+    </section>
+    <footer class="footer"><span>à table<span class="brand-dot">.</span></span><span>Fait pour mieux se repérer, pas pour se restreindre.</span></footer>
+  </main>
+
+  <dialog class="custom-dialog" id="custom-food-dialog" aria-labelledby="dialog-heading">
+    <form id="custom-food-form">
+      <div class="dialog-heading">
+        <div><p class="step-label">VOTRE CATALOGUE</p><h2 id="dialog-heading">Ajouter un aliment</h2></div>
+        <button class="dialog-close" type="button" id="dialog-close" aria-label="Fermer">×</button>
+      </div>
+      <p class="dialog-copy">Renseignez les calories indiquées sur l’emballage pour 100 g.</p>
+      <label class="form-label" for="custom-food-name">Nom de l’aliment</label>
+      <input class="form-input" id="custom-food-name" name="name" maxlength="48" required placeholder="Ex. Yaourt nature">
+      <label class="form-label" for="custom-food-calories">Calories pour 100 g</label>
+      <div class="calorie-input"><input class="form-input" id="custom-food-calories" name="calories" type="number" min="0" max="1000" step="1" required placeholder="Ex. 62"><span>kcal</span></div>
+      <p class="form-error" id="form-error" role="alert"></p>
+      <button class="save-button dialog-submit" type="submit">Ajouter à mes aliments</button>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
