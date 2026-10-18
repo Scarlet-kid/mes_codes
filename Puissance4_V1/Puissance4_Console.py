@@ -7,7 +7,7 @@ print(f"Bonjour {Joueur_1_pseudo}, vous jouerez avec les pions Jaune (J)")
 Joueur_1_lettre: str = "J"
 
 # Demande le pseudo du joueur 2
-Joueur_2_pseudo: str = input("Saisir le pseudo du joueur 2 : ")  
+Joueur_2_pseudo: str = input("Saisir le pseudo du joueur 2 : ")
 print(f"Bonjour {Joueur_2_pseudo}, vous jouerez avec les pions Rouge (R)")
 Joueur_2_lettre: str = "R"
 
@@ -16,14 +16,14 @@ def creer_grille() -> list[list[str]]:
     Crée une grille vide de 6 lignes et 7 colonnes
     Retourne : list[list[str]]
     """
-    
+
     return [
                 [" "," "," "," "," "," "," "],
                 [" "," "," "," "," "," "," "],
                 [" "," "," "," "," "," "," "],
                 [" "," "," "," "," "," "," "],
                 [" "," "," "," "," "," "," "],
-                [" "," "," "," "," "," "," "]   
+                [" "," "," "," "," "," "," "]
             ]
 
 def afficher_grille(grille: list[list[str]]) -> None:
@@ -106,7 +106,7 @@ def demander_colonne(grille: list[list[str]], joueur: str) -> int:
             continue
         return col
 
- 
+
 def placer_jeton(grille: list[list[str]], col: int, jeton: str) -> tuple[int, int]:
     """
     Place le jeton dans la colonne choisie, à la première case libre en partant du bas.
