@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111318">
+    <meta name="description" content="Un parcours pratique et gratuit pour apprendre PHP moderne, étape par étape.">
+    <title>PHP Lab — Apprendre PHP en 2026</title>
+    <link rel="stylesheet" href="apprendre.css">
+    <script src="apprendre.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="#accueil" aria-label="PHP Lab, accueil">
+            <span class="brand-mark">&lt;?&gt;</span>
+            <span>php<span class="brand-light">lab</span></span>
+        </a>
+        <nav class="top-nav" aria-label="Navigation principale">
+            <a href="#parcours">Le parcours</a>
+            <a href="#atelier">Atelier</a>
+            <a href="#quiz">Quiz</a>
+        </nav>
+        <a class="top-cta" href="#parcours">Commencer <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="accueil">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot"></span> LE GUIDE DU PHP MODERNE · 2026</p>
+                <h1>Du premier <span class="code-word">&lt;?php</span><br>à ton premier <span class="accent-word">projet.</span></h1>
+                <p class="hero-description">Apprends PHP en construisant de vraies bases : syntaxe, formulaires, bases de données et bonnes pratiques. À ton rythme, sans prérequis.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#parcours">Explorer le parcours <span aria-hidden="true">↓</span></a>
+                    <span class="read-time"><span aria-hidden="true">◷</span> Environ 45 min</span>
+                </div>
+                <div class="hero-meta">
+                    <span><span class="meta-icon">✓</span> Exemples pratiques</span>
+                    <span><span class="meta-icon">✓</span> PHP 8.5+</span>
+                    <span><span class="meta-icon">✓</span> Gratuit &amp; à ton rythme</span>
+                </div>
+            </div>
+            <div class="hero-visual" aria-label="Exemple de code PHP dans un éditeur">
+                <div class="code-window">
+                    <div class="window-bar">
+                        <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+                        <span>bonjour.php</span>
+                        <span class="window-lang">PHP</span>
+                    </div>
+                    <pre class="hero-code"><code><span class="code-muted">01</span> <span class="syntax-pink">&lt;?php</span>
+<span class="code-muted">02</span>
+<span class="code-muted">03</span> <span class="syntax-purple">$prenom</span> = <span class="syntax-green">"Alex"</span>;
+<span class="code-muted">04</span> <span class="syntax-purple">$annee</span> = <span class="syntax-orange">2026</span>;
+<span class="code-muted">05</span>
+<span class="code-muted">06</span> <span class="syntax-blue">function</span> <span class="syntax-yellow">saluer</span>(
+<span class="code-muted">07</span>     <span class="syntax-blue">string</span> <span class="syntax-purple">$nom</span>,
+<span class="code-muted">08</span>     <span class="syntax-blue">int</span> <span class="syntax-purple">$annee</span>
+<span class="code-muted">09</span> ): <span class="syntax-blue">string</span> {
+<span class="code-muted">10</span>     <span class="syntax-blue">return</span> <span class="syntax-green">"Salut $nom, bienvenue en $annee !"</span>;
+<span class="code-muted">11</span> }
+<span class="code-muted">12</span>
+<span class="code-muted">13</span> <span class="syntax-purple">$message</span> = <span class="syntax-yellow">saluer</span>(<span class="syntax-purple">$prenom</span>, <span class="syntax-purple">$annee</span>);
+<span class="code-muted">14</span> <span class="syntax-blue">echo</span> <span class="syntax-purple">$message</span>;</code></pre>
+                    <div class="code-output"><span class="output-prompt">›</span> Salut Alex, bienvenue en 2026 !</div>
+                </div>
+                <div class="floating-note"><span class="note-icon">✳</span><span><strong>Petit à petit</strong><br>Une notion, un exemple.</span></div>
+                <span class="hero-orbit orbit-one" aria-hidden="true"></span>
+                <span class="hero-orbit orbit-two" aria-hidden="true"></span>
+            </div>
+            <a class="scroll-cue" href="#parcours"><span></span> Fais défiler pour commencer</a>
+        </section>
+
+        <section class="learning-strip" aria-label="Informations sur le cours">
+            <div><span class="strip-number">01—06</span><span>Modules progressifs</span></div>
+            <div><span class="strip-number">100%</span><span>Exemples concrets</span></div>
+            <div><span class="strip-number">∞</span><span>Tu avances à ton rythme</span></div>
+            <div class="strip-stack"><span class="stack-label">TON STACK</span><span class="stack-pill">PHP <b>8.5+</b></span><span class="stack-pill">PDO</span><span class="stack-pill">Composer</span></div>
+        </section>
+
+        <section class="course-section" id="parcours">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow section-eyebrow">LE PARCOURS</p>
+                    <h2>Les bases, <span class="accent-word">dans le bon ordre.</span></h2>
+                    <p class="section-description">Suis les modules l’un après l’autre. Coche une étape quand tu te sens à l’aise : ta progression est gardée sur cet appareil.</p>
+                </div>
+                <div class="progress-card">
+                    <div class="progress-top"><span>Ta progression</span><strong id="progress-label">0 / 6</strong></div>
+                    <div class="progress-track" role="progressbar" aria-label="Progression du parcours" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0">
+                        <span class="progress-fill" id="progress-fill"></span>
+                    </div>
+                    <span class="progress-caption" id="progress-caption">À toi de jouer, le premier pas compte.</span>
+                </div>
+            </div>
+
+            <div class="course-grid">
+                <aside class="course-sidebar">
+                    <span class="sidebar-label">FONDAMENTAUX</span>
+                    <a class="side-link is-active" href="#module-1"><span class="side-number">01</span> Démarrer avec PHP <span class="side-arrow">↗</span></a>
+                    <a class="side-link" href="#module-2"><span class="side-number">02</span> Variables &amp; types <span class="side-arrow">↗</span></a>
+                    <a class="side-link" href="#module-3"><span class="side-number">03</span> Conditions &amp; boucles <span class="side-arrow">↗</span></a>
+                    <span class="sidebar-label sidebar-label-spaced">PASSER À LA PRATIQUE</span>
+                    <a class="side-link" href="#module-4"><span class="side-number">04</span> Fonctions &amp; tableaux <span class="side-arrow">↗</span></a>
+                    <a class="side-link" href="#module-5"><span class="side-number">05</span> Formulaires sécurisés <span class="side-arrow">↗</span></a>
+                    <a class="side-link" href="#module-6"><span class="side-number">06</span> Base de données avec PDO <span class="side-arrow">↗</span></a>
+                    <div class="sidebar-tip"><span class="tip-spark">✳</span><p><strong>Conseil de pro</strong><br>Teste chaque exemple dans un fichier <code>.php</code> sur ton serveur local.</p></div>
+                </aside>
+
+                <div class="lesson-list">
+                    <article class="lesson-card" id="module-1" data-lesson="1">
+                        <div class="lesson-topline"><span class="lesson-index">MODULE 01 <i>·</i> 5 MIN</span><button class="complete-button" type="button" aria-pressed="false"><span>✓</span> Marquer comme terminé</button></div>
+                        <h3>Faire connaissance avec PHP</h3>
+                        <p>PHP est un langage exécuté côté serveur. Il génère du HTML que ton navigateur peut afficher. Pour commencer, écris ton code entre les balises PHP.</p>
+                        <div class="snippet">
+                            <div class="snippet-head"><span>bonjour.php</span><button type="button" class="copy-button" data-copy="snippet-1">Copier le code</button></div>
+                            <pre><code id="snippet-1">&lt;?php
+declare(strict_types=1);
+
+$prenom = "Sam";
+echo "Bonjour, " . $prenom . " !";</code></pre>
+                        </div>
+                        <div class="lesson-note"><span>À retenir</span><p>Une instruction se termine généralement par <code>;</code>. Pour voir le résultat PHP, utilise un serveur local comme PHP intégré ou un environnement de développement adapté.</p></div>
+                    </article>
+
+                    <article class="lesson-card" id="module-2" data-lesson="2">
+                        <div class="lesson-topline"><span class="lesson-index">MODULE 02 <i>·</i> 7 MIN</span><button class="complete-button" type="button" aria-pressed="false"><span>✓</span> Marquer comme terminé</button></div>
+                        <h3>Variables &amp; types</h3>
+                        <p>Les variables commencent par <code>$</code>. En PHP moderne, des types explicites rendent ton code plus facile à comprendre et à maintenir.</p>
+                        <div class="snippet">
+                            <div class="snippet-head"><span>profil.php</span><button type="button" class="copy-button" data-copy="snippet-2">Copier le code</button></div>
+                            <pre><code id="snippet-2">&lt;?php
+declare(strict_types=1);
+
+$pseudo = "Mina";       // string
+$points = 120;          // int
+$estConnecte = true;    // bool
+$score = 18.5;          // float
+
+echo "{$pseudo} a {$points} points.";</code></pre>
+                        </div>
+                        <div class="lesson-note"><span>À retenir</span><p>Choisis des noms explicites. Une chaîne s’écrit entre guillemets ; l’interpolation <code>{$variable}</code> fonctionne dans les chaînes entre guillemets doubles.</p></div>
+                    </article>
+
+                    <article class="lesson-card" id="module-3" data-lesson="3">
+                        <div class="lesson-topline"><span class="lesson-index">MODULE 03 <i>·</i> 8 MIN</span><button class="complete-button" type="button" aria-pressed="false"><span>✓</span> Marquer comme terminé</button></div>
+                        <h3>Décider et répéter</h3>
+                        <p>Les conditions <code>if</code> et les boucles contrôlent le déroulement du programme. Compare les valeurs avec <code>===</code> pour éviter les conversions implicites inattendues.</p>
+                        <div class="snippet">
+                            <div class="snippet-head"><span>scores.php</span><button type="button" class="copy-button" data-copy="snippet-3">Copier le code</button></div>
+                            <pre><code id="snippet-3">&lt;?php
+$scores = [12, 17, 9];
+
+foreach ($scores as $score) {
+    if ($score >= 10) {
+        echo "{$score} : validé\n";
+    } else {
+        echo "{$score} : à retravailler\n";
+    }
+}</code></pre>
+                        </div>
+                        <div class="lesson-note"><span>À retenir</span><p><code>foreach</code> parcourt chaque élément d’un tableau. Les accolades délimitent le bloc exécuté par la condition.</p></div>
+                    </article>
+
+                    <article class="lesson-card" id="module-4" data-lesson="4">
+                        <div class="lesson-topline"><span class="lesson-index">MODULE 04 <i>·</i> 8 MIN</span><button class="complete-button" type="button" aria-pressed="false"><span>✓</span> Marquer comme terminé</button></div>
+                        <h3>Organiser avec fonctions &amp; tableaux</h3>
+                        <p>Une fonction nommée réutilise une logique. Les tableaux associatifs sont pratiques pour regrouper des données qui vont ensemble.</p>
+                        <div class="snippet">
+                            <div class="snippet-head"><span>utilisateur.php</span><button type="button" class="copy-button" data-copy="snippet-4">Copier le code</button></div>
+                            <pre><code id="snippet-4">&lt;?php
+function etiquette(array $utilisateur): string
+{
+    return $utilisateur['prenom'] . ' — ' . $utilisateur['role'];
+}
+
+$profil = ['prenom' => 'Noa', 'role' => 'apprenti'];
+echo etiquette($profil);</code></pre>
+                        </div>
+                        <div class="lesson-note"><span>À retenir</span><p>Les types en entrée et en sortie documentent ce qu’une fonction attend et renvoie. Une fonction devrait faire une chose clairement.</p></div>
+                    </article>
+
+                    <article class="lesson-card" id="module-5" data-lesson="5">
+                        <div class="lesson-topline"><span class="lesson-index">MODULE 05 <i>·</i> 9 MIN</span><button class="complete-button" type="button" aria-pressed="false"><span>✓</span> Marquer comme terminé</button></div>
+                        <h3>Recevoir un formulaire sans risque</h3>
+                        <p>Les données du navigateur ne sont jamais fiables. Vérifie le type reçu, valide ce dont tu as besoin, et échappe toute valeur avant de l’afficher dans du HTML.</p>
+                        <div class="snippet">
+                            <div class="snippet-head"><span>accueil.php</span><button type="button" class="copy-button" data-copy="snippet-5">Copier le code</button></div>
+                            <pre><code id="snippet-5">&lt;?php
+$nom = $_POST['nom'] ?? '';
+$nom = is_string($nom) ? trim($nom) : '';
+?&gt;
+
+&lt;form method="post"&gt;
+    &lt;label for="nom"&gt;Ton prénom&lt;/label&gt;
+    &lt;input id="nom" name="nom" required&gt;
+    &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;p&gt;Bonjour, &lt;?= htmlspecialchars($nom, ENT_QUOTES, 'UTF-8') ?&gt; !&lt;/p&gt;</code></pre>
+                        </div>
+                        <div class="lesson-note"><span>À retenir</span><p><code>htmlspecialchars</code> aide à prévenir l’injection de HTML lors de l’affichage. En production, ajoute aussi une protection CSRF aux formulaires qui modifient des données.</p></div>
+                    </article>
+
+                    <article class="lesson-card" id="module-6" data-lesson="6">
+                        <div class="lesson-topline"><span class="lesson-index">MODULE 06 <i>·</i> 8 MIN</span><button class="complete-button" type="button" aria-pressed="false"><span>✓</span> Marquer comme terminé</button></div>
+                        <h3>Lire la base de données avec PDO</h3>
+                        <p>PDO fournit une interface cohérente pour interroger une base de données. Les requêtes préparées séparent les données de la requête SQL.</p>
+                        <div class="snippet">
+                            <div class="snippet-head"><span>utilisateurs.php</span><button type="button" class="copy-button" data-copy="snippet-6">Copier le code</button></div>
+                            <pre><code id="snippet-6">&lt;?php
+$pdo = new PDO($dsn, $user, $password, [
+    PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION,
+]);
+
+$requete = $pdo-&gt;prepare(
+    'SELECT nom FROM utilisateurs WHERE id = :id'
+);
+$requete-&gt;execute(['id' =&gt; $id]);
+$nom = $requete-&gt;fetchColumn();</code></pre>
+                        </div>
+                        <div class="lesson-note"><span>À retenir</span><p>Ne concatène jamais une entrée utilisateur dans du SQL. Garde les identifiants hors du dépôt de code, par exemple dans une configuration locale ignorée par Git.</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="workshop-section" id="atelier">
+            <div class="workshop-intro">
+                <p class="eyebrow section-eyebrow">TON PREMIER MINI-PROJET</p>
+                <h2>Un compteur de <span class="accent-word">visites.</span></h2>
+                <p>Tu as vu les variables, les conditions et le HTML. Assemble-les pour afficher un message personnalisé, puis continue en ajoutant un formulaire.</p>
+                <ul class="check-list">
+                    <li><span>✓</span> Crée <code>index.php</code></li>
+                    <li><span>✓</span> Lance le serveur PHP local</li>
+                    <li><span>✓</span> Ouvre la page dans ton navigateur</li>
+                </ul>
+            </div>
+            <div class="workshop-code">
+                <div class="snippet-head"><span><i class="terminal-dot"></i> index.php</span><button type="button" class="copy-button" data-copy="snippet-project">Copier le code</button></div>
+                <pre><code id="snippet-project">&lt;?php
+$visites = 1;
+$message = "Bienvenue sur mon site !";
+?&gt;
+
+&lt;!doctype html&gt;
+&lt;html lang="fr"&gt;
+&lt;body&gt;
+    &lt;h1&gt;&lt;?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?&gt;&lt;/h1&gt;
+    &lt;p&gt;Visite numéro &lt;?= $visites ?&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <div class="terminal-line"><span>$</span> php -S localhost:8000 <span class="terminal-comment"># dans le dossier du projet</span></div>
+            </div>
+        </section>
+
+        <section class="quiz-section" id="quiz">
+            <div class="quiz-card">
+                <div class="quiz-badge">✳ &nbsp;PETIT QUIZ</div>
+                <h2>Prêt·e à vérifier tes bases ?</h2>
+                <p>Quelle est la bonne façon d’insérer une valeur utilisateur dans une requête SQL avec PDO ?</p>
+                <div class="quiz-options" role="group" aria-label="Réponses au quiz">
+                    <button class="quiz-option" type="button" data-answer="wrong"><span>A</span> Concaténer la valeur à la requête</button>
+                    <button class="quiz-option" type="button" data-answer="correct"><span>B</span> Utiliser une requête préparée</button>
+                    <button class="quiz-option" type="button" data-answer="wrong"><span>C</span> Remplacer les espaces par des tirets</button>
+                </div>
+                <p class="quiz-feedback" id="quiz-feedback" aria-live="polite"></p>
+            </div>
+            <div class="next-steps">
+                <p class="eyebrow section-eyebrow">ET ENSUITE ?</p>
+                <h3>Le prochain chapitre t’attend.</h3>
+                <p>Découvre les outils qui aident à faire grandir un projet PHP proprement.</p>
+                <div class="next-tags"><span>Composer</span><span>Git</span><span>Tests</span><span>Laravel</span></div>
+                <a class="text-link" href="#parcours">Revoir les modules <span>↗</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a class="brand" href="#accueil"><span class="brand-mark">&lt;?&gt;</span><span>php<span class="brand-light">lab</span></span></a>
+        <p>Fait pour apprendre. Construit pour la suite.</p>
+        <a href="#accueil" class="back-top">Retour en haut ↑</a>
+    </footer>
+</body>
+</html>
