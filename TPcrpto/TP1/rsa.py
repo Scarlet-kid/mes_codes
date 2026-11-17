@@ -1,6 +1,5 @@
 from random import random
 
-
 def est_premier(n:int):
     if n<2:
         return False
@@ -22,52 +21,71 @@ def pgcd(a,b):
     return pgcd(b,a%b)
 
 
-def euclide_etendu(a, b):
-
-    # Initialisation du tableau (Ligne 0 et Ligne 1)
-    r0, u0, v0 = a, 1, 0  # Ligne avec m
-    r1, u1, v1 = b, 0, 1  # Ligne avec c
-
-    # Boucle de mise à jour du tableau
+def euclide_etendu(a: int, b: int):
+    r0, u0, v0 = a, 1, 0
+    r1, u1, v1 = b, 0, 1
     while r1 != 0:
         q = r0 // r1
-
-        # Calcul de la nouvelle ligne
-        r_temp = r0 - q * r1
-        u_temp = u0 - q * u1
-        v_temp = v0 - q * v1
-
-        # Décalage des lignes
-        r0, u0, v0 = r1, u1, v1
-        r1, u1, v1 = r_temp, u_temp, v_temp
-
+        r0, u0, v0, r1, u1, v1 = r1, u1, v1, r0 - q * r1, u0 - q * u1, v0 - q * v1
     return r0, u0, v0
 
-
-def inverse_modulaire(c, m):
+def CD(m: int) -> tuple[int, int]:
     """
-    Calcule l'inverse d de c modulo m (c*d = 1 mod m)
+    Question 5 du TP RSA :
+    Prend en entrée un entier m = (p-1)*(q-1)
+    Renvoie c et d tels que pgcd(c, m) == 1 et c * d ≡ 1 (mod m)
     """
-    g, u, v = euclide_etendu(m, c)
-    if g != 1:
-        return None  # N'existe pas si pas premiers entre eux
-    else:
-        return v % m  # S'assure que d est positif dans [0, m-1]
-
-def CD(m):
-    # Choisir un c premier avec m
+    # 1. On choisit c premier avec m
     c = 3
     while pgcd(c, m) != 1:
         c += 2
 
-    # Calculer d avec la méthode du tableau de Bézout
-    d = inverse_modulaire(c, m)
+    # 2. On calcule d = inverse de c modulo m (via Bézout)
+    g, u, v = euclide_etendu(m, c)
+    d = v % m
 
     return c, d
 
-def main():
-    """n = int(input("enter the number: "))
-    print(est_premier(n))"""
-    print(premier())
-if __name__ == '__main__':
-    main()
+def key() -> tuple[list[int], list[int]]:
+    """Génère le couple de clés [n, c] (publique) et [n, d] (privée)."""
+    p, q = premier()
+    n = p * q
+    m = (p - 1) * (q - 1)
+    c, d = CD(m)
+    cle_publique = [n, c]
+    cle_privee = [n, d]
+    return cle_publique, cle_privee
+
+# --- QUESTION 8 ---
+def chiffrement_rsa(mot: list[int], cle: list[int]) -> list[int]:
+    """Chiffre (ou déchiffre) un mot représenté par une liste d'entiers avec la clé [n, exp]."""
+    n, exp = cle[0], cle[1]
+    mot_code = []
+    for lettre in mot:
+        mot_code.append(pow(lettre, exp, n))
+    return mot_code
+
+# --- QUESTION 9 ---
+def programme_principal_rsa():
+    """Programme principal pour tester le chiffrement et le déchiffrement RSA."""
+    # 1. Génération d'un mot de 7 lettres au hasard (entiers de 0 à 25)
+    mot_original = [random.randint(0, 25) for _ in range(7)]
+    
+    # 2. Génération des clés
+    cle_pub, cle_priv = key()
+    
+    # 3. Chiffrement avec la clé publique
+    mot_chiffre = chiffrement_rsa(mot_original, cle_pub)
+    
+    # 4. Déchiffrement avec la clé privée
+    mot_dechiffre = chiffrement_rsa(mot_chiffre, cle_priv)
+    
+    # 5. Affichage conforme aux exigences du TP
+    print(f"Le mot genere au hasard est : {mot_original}")
+    print(f"La cle publique generee est : {cle_pub}")
+    print(f"La cle privee generee est   : {cle_priv}")
+    print(f"Le mot chiffre avec la cle publique est : {mot_chiffre}")
+    print(f"Le mot dechiffre avec la cle privee est : {mot_dechiffre}")
+
+if __name__ == "__main__":
+    programme_principal_rsa()
