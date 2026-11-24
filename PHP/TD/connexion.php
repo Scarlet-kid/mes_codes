@@ -33,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Connexion</title>
 </head>
 <body>
-
     <h1>Connexion</h1>
 
     <?php if ($erreur): ?>

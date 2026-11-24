@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,19 +8,16 @@
     <title>Voir</title>
 </head>
 <body>
-    <?php
-        $livres = [['titre'=>'Dune','auteur' => 'Frank Herbert' ], [ 'titre' => '1984', 'auteur' => 'George Orwell' ],
-                  ['titre' => 'Le Petit Prince', 'auteur' => 'Antoine de Saint-Exupéry' ]];
-
-    ?>
-
     <ul>
-        <?php foreach ($livres as $livre): ?>
-            <li>
-                <strong><?= ' '.($livre['titre']) ?></strong> 
-                de <?= ' '.($livre['auteur']) ?>
-            </li>
-        <?php endforeach; ?>
+        <?php
+            require ('db.php');
+            $stmt = $bdd->query("SELECT livre.id,livre.titre,auteur.nom FROM livre JOIN auteur ON livre.id = auteur.id");
+            $livres = $stmt->fetchAll();
+            foreach ($livres as $livre) {?>
+                <ul>
+                    <li value="<?= $livre['id'] ?>"><?= htmlspecialchars($livre['titre']) ?> de <?= htmlspecialchars($livre['nom']) ?></li>
+                </ul>
+        <?php } ?>
     </ul>
 
     <br>

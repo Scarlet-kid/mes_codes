@@ -1,0 +1,1 @@
+SELECT livre.id,livre.titre,auteur.nom FROM livre JOIN auteur ON livre.id = auteur.id
